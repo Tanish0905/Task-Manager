@@ -5,7 +5,7 @@ import { UserPlus } from "lucide-react"
 import { Inputwrapper, FIELDS, BUTTONCLASSES, MESSAGE_SUCCESS, MESSAGE_ERROR } from '../assets/dummy'
 
 // Dummy & Constants
-const API_URL = "http://localhost:4000"
+const API_URL = `${ import.meta.env.REACT_APP_API_URL }`;
 const INITIAL_FORM = { name: "", email: "", password: "" }
 
 const SignUp = ({ onSwitchMode }) => {

@@ -5,7 +5,7 @@ import TaskItem from '../components/TaskItem';
 import TaskModal from '../components/AddTask';
 import { layoutClasses } from '../assets/dummy';
 
-const API_BASE = 'http://localhost:4000/api/tasks';
+const API_BASE = `${import.meta.env.REACT_APP_API_URL}/api/tasks`;
 const sortOptions = [
   { id: 'newest', label: 'Newest', icon: <SortDesc className="w-3 h-3" /> },
   { id: 'oldest', label: 'Oldest', icon: <SortAsc className="w-3 h-3" /> },
@@ -107,7 +107,7 @@ const PendingTasks = () => {
               onDelete={() => handleDelete(task._id || task.id)}
               onToggleComplete={() => handleToggleComplete(
                 task._id || task.id,
-                !t.completed
+                !task.completed
               )}
               onEdit={() => { setSelectedTask(task); setShowModal(true); }}
               onRefresh={refreshTasks}
